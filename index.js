@@ -1,8 +1,4 @@
-
-const menu=[
-
-{
-  "menuProductos": [
+const menuProductos= [
     {
       "idProducto": 1,
       "nombre": "Hamburguesa Clásica",
@@ -34,8 +30,7 @@ const menu=[
       "categoria": "bebida"
     }
   ]
-}
-]
+
 
 let agregarProducto= function(nombre= "HotDog", precio= 8000.00, categoria= "Perro Caliente"){ menuProductos.push({ idProducto: menuProductos.length+1, nombre: nombre, precio: precio, categoria: categoria })}
 agregarProducto()
@@ -44,3 +39,15 @@ function listarProductos() {menuProductos.forEach((menuProductos)=>{
     console.log(menuProductos)
 })}
 listarProductos()
+
+let pedidos = []
+let crearPedidos = function(nombreCliente,items,total,estado){
+    pedidos.push({idPedido: pedidos.length+1,nombreCliente:nombreCliente,items:items,total:total,estado:estado})
+    return pedidos
+}
+crearPedidos("Maria","Coca-Cola",3500.00,"pendiente")
+crearPedidos("Juan", "Hamburguesa Clasica", 12000.00, "entregado")
+crearPedidos("Ana", "Jugo de naranja", 4000.00, "pendiente")
+
+console.log(pedidos)
+

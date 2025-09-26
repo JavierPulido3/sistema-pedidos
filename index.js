@@ -67,7 +67,8 @@ console.log(pedidosEntregados)
 function estados(pedidos){
     const estado_conteo= {
       pendiente: 0,
-      entregado: 0
+      entregado: 0,
+      preparando: 0
     };
     pedidos.forEach((pedido) => {
       if (pedido.estado in estado_conteo) {
@@ -78,7 +79,8 @@ function estados(pedidos){
     });
   
     console.log(`pendiente: ${estado_conteo.pendiente}`);
-    console.log(`entregado: ${estado_conteo.entregado}`)
+    console.log(`entregado: ${estado_conteo.entregado}`);
+    console.log(`preparando: ${estado_conteo.preparando}`)
   }
   
   function calcular_ventas(pedidos) {

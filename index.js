@@ -40,3 +40,7 @@ function listarProductos() {menuProductos.forEach((menuProductos)=>{
 })}
 listarProductos()
 
+function buscarproducto(producto) {
+  return producto.nombre === "Coca-Cola";
+}
+console.log(menuProductos.find(buscarproducto));

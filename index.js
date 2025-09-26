@@ -61,5 +61,34 @@ pedidos[0].estado = "preparando"
 console.log(pedidos)
 
 let pedidosEntregados = pedidos.filter(pedido => pedido.estado == "entregado");
-console.log(pedidosEntregados);
+console.log(pedidosEntregados)
+
+
+function estados(pedidos){
+    const estado_conteo= {
+      pendiente: 0,
+      entregado: 0
+    };
+    pedidos.forEach((pedido) => {
+      if (pedido.estado in estado_conteo) {
+        estado_conteo[pedido.estado]++;
+      } else {
+        console.log(`estado desconocido: ${pedido.estado}`);
+      }
+    });
+  
+    console.log(`pendiente: ${estado_conteo.pendiente}`);
+    console.log(`entregado: ${estado_conteo.entregado}`)
+  }
+  
+  function calcular_ventas(pedidos) {
+    const total = pedidos
+      .filter((pedido) => pedido.estado === "entregado")
+      .reduce((suma, pedido) => suma + pedido.total, 0);
+  
+    console.log(`Total ventas (los entregados): $${total}`)
+  }
+  
+  estados(pedidos)
+  calcular_ventas(pedidos)
 

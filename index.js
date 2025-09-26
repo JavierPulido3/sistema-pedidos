@@ -40,3 +40,14 @@ function listarProductos() {menuProductos.forEach((menuProductos)=>{
 })}
 listarProductos()
 
+let pedidos = []
+let crearPedidos = function(nombreCliente,items,total,estado){
+    pedidos.push({idPedido: pedidos.length+1,nombreCliente:nombreCliente,items:items,total:total,estado:estado})
+    return pedidos
+}
+crearPedidos("Maria","Coca-Cola",3500.00,"pendiente")
+crearPedidos("Juan", "Hamburguesa Clasica", 12000.00, "entregado")
+crearPedidos("Ana", "Jugo de naranja", 4000.00, "pendiente")
+
+console.log(pedidos)
+

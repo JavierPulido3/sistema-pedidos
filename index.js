@@ -37,3 +37,10 @@ const menu=[
 }
 ]
 
+let agregarProducto= function(nombre= "HotDog", precio= 8000.00, categoria= "Perro Caliente"){ menuProductos.push({ idProducto: menuProductos.length+1, nombre: nombre, precio: precio, categoria: categoria })}
+agregarProducto()
+
+function listarProductos() {menuProductos.forEach((menuProductos)=>{
+    console.log(menuProductos)
+})}
+listarProductos()

@@ -51,3 +51,8 @@ crearPedidos("Ana", "Jugo de naranja", 4000.00, "pendiente")
 
 console.log(pedidos)
 
+pedidos[0].estado = "preparando"
+console.log(pedidos)
+
+let pedidosEntregados = pedidos.filter(pedido => pedido.estado == "entregado");
+console.log(pedidosEntregados);
